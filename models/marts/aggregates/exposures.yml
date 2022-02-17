@@ -1,31 +1,29 @@
 version: 2
 
 exposures:
-  - name: yearly_part_rollup
+  - name: Executive Dashboard
     description: |
-      # An h1 header
+      # Executive Dashboard
       ============
 
-      Paragraphs are separated by a blank line.
+      This dashboard is used at monthly executive strategy meetings and quarterly board meetings to report company progress.
 
-      2nd paragraph. *Italic*, **bold**, and `monospace`
-      Itemized lists look like:
-        * this one
-        * that one
-        * the other one
+      Data in this dashboard comes from sales and operation systems and is maintained by dbt Bob.
+
+
     
     # type could be {dashboard, notebook, analysis, ml, application}
     type: dashboard 
     
     # this is just a link to the thing itself for click through from documentation
-    url: https://example.com
+    url: https://fishtown.looker.com/dashboards/335
     
     # convenience feature - relative scale of {high, medium, low}
     maturity: high
     
     # documentation purposes for point of contact if stuff breaks
     owner:
-      name: DBT User Bob
+      name: dbt User Bob
       email: dbtuserbob@getdbt.com
     
     # IMPORTANT: determines the lineage relationship of the exposure construct to the rest of your DAG
