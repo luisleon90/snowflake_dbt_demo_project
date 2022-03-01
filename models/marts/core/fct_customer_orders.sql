@@ -19,6 +19,7 @@ final as (
     select 
         customer.customer_key,
         customer.name,
+        customer.region_key,
         orders.net_item_sales_amount,
         orders.order_date
 
@@ -33,5 +34,3 @@ from
     final
 order by
    order_date
-
-    
