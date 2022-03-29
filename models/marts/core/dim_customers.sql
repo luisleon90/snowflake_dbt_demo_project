@@ -30,8 +30,7 @@ final as (
         region.name as region,
         customer.phone_number,
         customer.account_balance,
-        customer.market_segment,
-        0
+        customer.market_segment
     from
         customer
         inner join nation
