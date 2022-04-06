@@ -10,7 +10,8 @@ renamed as (
         r_regionkey as region_key,
         r_name as name,
         r_comment as comment,
-        0
+        0,
+        1
 
     from source
 
