@@ -35,7 +35,10 @@ jobs:
         shell: bash -l {0}
         run: |
           # Set the command in the $() brackets as an output to use in later steps
+<<<<<<< HEAD
           dialect == bigquery
+=======
+>>>>>>> 12d487747962035cb9597de2bb791d4276b44466
           echo "::set-output name=lintees::$(
           # Issue where grep regular expressions don't work as expected on the
           # Github Actions shell, check models/ folder
@@ -49,12 +52,13 @@ jobs:
           grep -E '^models.*[.]sql$' |
           tr -s '\n' ' ')
           )"
+
       - name: Lint dbt models
         id: sqlfluff_json
         if: steps.get_files_to_lint.outputs.lintees != ''
         shell: bash -l {0}
         run: sqlfluff lint --format github-annotation --annotation-level notice --nofail ${{ steps.get_files_to_lint.outputs.lintees }} > annotations.json
-
+        
       - name: Annotate
         uses: yuzutech/annotations-action@v0.3.0
         with:
