@@ -35,10 +35,6 @@ jobs:
         shell: bash -l {0}
         run: |
           # Set the command in the $() brackets as an output to use in later steps
-<<<<<<< HEAD
-          dialect == bigquery
-=======
->>>>>>> 12d487747962035cb9597de2bb791d4276b44466
           echo "::set-output name=lintees::$(
           # Issue where grep regular expressions don't work as expected on the
           # Github Actions shell, check models/ folder
