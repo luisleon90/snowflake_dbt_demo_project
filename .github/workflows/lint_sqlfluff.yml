@@ -53,7 +53,7 @@ jobs:
         id: sqlfluff_json
         if: steps.get_files_to_lint.outputs.lintees != ''
         shell: bash -l {0}
-        run: sqlfluff lint --format github-annotation --annotation-level notice --nofail ${{ steps.get_files_to_lint.outputs.lintees }} > annotations.json
+        run: sqlfluff lint --format github-annotation --dialect snowflake --annotation-level notice --nofail ${{ steps.get_files_to_lint.outputs.lintees }} > annotations.json
         
       - name: Annotate
         uses: yuzutech/annotations-action@v0.3.0
