@@ -39,6 +39,7 @@ jobs:
           grep -E '^dbt/models.*[.]sql$' |
           tr -s '\n' ' ')
           )"
+
       - name: Lint dbt models
         id: sqlfluff_json
         if: steps.get_files_to_lint.outputs.lintees != ''
