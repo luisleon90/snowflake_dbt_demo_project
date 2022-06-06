@@ -1,0 +1,139 @@
+version: 2
+
+sources:
+  - name: synthea
+    database: cutini_demo
+    tables:
+      - name: claims
+        columns:
+          - name: id
+            tests: 
+              - unique
+              - not_null
+          - name: patientid
+            tests:
+              - relationships:
+                  to: source('synthea', 'patients')
+                  field: id
+          - name: providerid
+          - name: primarypatientinsuranceid
+          - name: secondarypatientinsuranceid
+          - name: departmentid
+          - name: patientdepartmentid
+          - name: diagnosis1
+          - name: diagnosis2
+          - name: diagnosis3
+          - name: diagnosis4
+          - name: diagnosis5
+          - name: diagnosis6
+          - name: diagnosis7
+          - name: diagnosis8
+          - name: referringproviderid
+          - name: appointmentid
+          - name: currentillnessdate
+          - name: servicedate
+          - name: supervisingproviderid
+          - name: status1
+          - name: status2
+          - name: statusp
+          - name: oustanding1
+          - name: outstanding2
+          - name: outstandingp
+          - name: lastbilleddate
+          - name: lastbilleddate2
+          - name: lastbilleddatep
+          - name: healthcareclaimtypeid1
+          - name: healthcarelciamtypeid2
+
+      - name: conditions
+        columns:
+          - name: start
+          - name: stop
+          - name: patient
+            tests:
+              - relationships:
+                  to: source('synthea', 'patients')
+                  field: id
+          - name: encounter
+            tests:
+              - relationships:
+                  to: source('synthea', 'encounters')
+                  field: id
+          - name: code
+          - name: description
+
+      - name: encounters
+        columns:
+          - name: id
+            tests: 
+              - unique
+              - not_null
+          - name: start
+          - name: stop
+          - name: patient
+            tests:
+              - relationships:
+                  to: source('synthea', 'patients')
+                  field: id
+          - name: organization
+          - name: provider
+          - name: payer
+          - name: encounterclass
+          - name: code
+          - name: description
+          - name: base_encounter_cost
+          - name: total_claim_cost
+          - name: payer_coverage
+          - name: reasoncode
+          - name: reasondescription
+
+      - name: patients
+        columns:
+          - name: id
+            tests: 
+              - unique
+              - not_null
+          - name: birthdate
+          - name: deathdate
+          - name: ssn
+          - name: drivers
+          - name: passport
+          - name: prefix
+          - name: first
+          - name: last
+          - name: suffix
+          - name: maiden
+          - name: marital
+          - name: race
+          - name: ethnicity
+          - name: gender
+          - name: birthplace
+          - name: address
+          - name: city
+          - name: state
+          - name: county
+          - name: zip
+          - name: lat
+          - name: lon
+          - name: healthcare_expenses
+          - name: healthcare_coverage
+
+      - name: procedures
+        columns:
+          - name: start
+          - name: stop
+          - name: patient
+            tests:
+              - relationships:
+                  to: source('synthea', 'patients')
+                  field: id
+          - name: encounter
+            tests:
+              - relationships:
+                  to: source('synthea', 'encounters')
+                  field: id
+          - name: code
+          - name: description
+          - name: base_cost
+          - name: reasoncode
+          - name: reasondescription
