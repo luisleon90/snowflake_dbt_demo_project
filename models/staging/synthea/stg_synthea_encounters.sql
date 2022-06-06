@@ -8,8 +8,8 @@ renamed as (
 
     select
         id,
-        'start' as start_time,
-        'stop' as stop_time,
+        "START" as encounter_start_time,
+        "STOP" as encounter_stop_time,
         patient,
         organization,
         provider,
