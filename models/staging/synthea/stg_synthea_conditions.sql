@@ -7,8 +7,8 @@ with source as (
 renamed as (
 
     select
-        'start' as start_time,
-        'stop' as stop_time,
+        "START" as condition_start_time,
+        "STOP" as condition_stop_time,
         patient,
         encounter,
         code,
