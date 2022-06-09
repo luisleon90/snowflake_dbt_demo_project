@@ -3,6 +3,7 @@ with patient_encounters as (
     select * from {{ ref('patient_encounters') }}
 
 )
+
 select
     patient_encounters.id,
     patient_encounters.last,
