@@ -6,8 +6,7 @@ with patient_encounters as (
 select
     patient_encounters.id,
     patient_encounters.last,
-    sum(total_claim_cost) as total_cost,
-    0
+    sum(total_claim_cost) as total_cost
     
 from
     patient_encounters
