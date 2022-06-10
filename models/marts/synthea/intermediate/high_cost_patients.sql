@@ -3,12 +3,12 @@ with patient_encounters as (
     select * from {{ ref('patient_encounters') }}
 
 )
+
 select
     patient_encounters.id,
     patient_encounters.last,
-    sum(total_claim_cost) as total_cost,
-    0
-    
+    sum(patient_encounters.total_claim_cost) as total_cost
+
 from
     patient_encounters
 where deathdate is null /* filtering out deceased patients */
