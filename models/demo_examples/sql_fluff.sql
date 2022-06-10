@@ -3,4 +3,6 @@ select
     name,
     region_key,
     comment
+
+
 from {{ ref('stg_tpch_nations') }}
