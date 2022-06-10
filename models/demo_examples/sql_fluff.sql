@@ -6,4 +6,3 @@ select
 
 
 from {{ ref('stg_tpch_nations') }}
-
