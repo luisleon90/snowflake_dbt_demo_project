@@ -25,11 +25,11 @@ with data as ( (
     )
     union
     (
-    select
-        current_date - 2 as sales_date,
-        'EFG' as product,
-        5 as quantity,
-        10 as unit_price
+        select
+            'EFG' as product,
+            5 as quantity,
+            10 as unit_price,
+            current_date - 2 as sales_date
 
     )
 )
