@@ -1,7 +1,6 @@
 with data as
 (   (
     select
-        current_date - 20 as sales_date,
         'ABC' as product,
         10 as quantity,
         20 as unit_price
