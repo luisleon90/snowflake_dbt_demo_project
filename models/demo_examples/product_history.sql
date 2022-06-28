@@ -18,12 +18,12 @@ with data as ( (
     )
     union
     (
-    select
-        3 as product_key,
-        'EFG' as product_code,
-        'Yellow' as product_color,
-        current_date - 60 as valid_from_dt,
-        current_date + 1000000 as valid_to_dt
+        select
+            3 as product_key,
+            'EFG' as product_code,
+            'Yellow' as product_color,
+            current_date - 60 as valid_from_dt,
+            current_date + 1000000 as valid_to_dt
 
     )
 )
