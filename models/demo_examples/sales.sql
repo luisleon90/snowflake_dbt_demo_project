@@ -1,5 +1,4 @@
-with data as
-(   (
+with data as ( (
     select
         'ABC' as product,
         10 as quantity,
