@@ -1,30 +1,36 @@
 with data as
 (   (
     select
-        1 as product_key,
-        'ABC' as product_code,
-        'Blue' as product_color,
-        current_date - 30 as valid_from_dt,
-        current_date - 10 as validt_to_dt
+        current_date - 20 as sales_date,
+        'ABC' as product,
+        10 as quantity,
+        20 as unit_price
     )
     union
     (
     select
-        2 as product_key,
-        'ABC' as product_code,
-        'Red' as product_color,
-        current_date - 10 as valid_from_dt,
-        null as validt_to_dt
+        current_date - 11 as sales_date,
+        'ABC' as product,
+        20 as quantity,
+        18 as unit_price
 
     )
     union
     (
     select
-        3 as product_key,
-        'EFG' as product_code,
-        'Yellow' as product_color,
-        current_date - 60 as valid_from_dt,
-        null as validt_to_dt
+        current_date - 8 as sales_date,
+        'ABC' as product,
+        10 as quantity,
+        20 as unit_price
+
+    )
+    union
+    (
+    select
+        current_date - 2 as sales_date,
+        'EFG' as product,
+        5 as quantity,
+        10 as unit_price
 
     )
 )
