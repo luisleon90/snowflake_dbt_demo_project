@@ -1,5 +1,4 @@
-with data as
-(
+with data as (
     select
     *
     from {{ ref('product_history') }} product
