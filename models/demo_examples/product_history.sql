@@ -1,5 +1,4 @@
-with data as
-(   (
+with data as ( (
     select
         1 as product_key,
         'ABC' as product_code,
