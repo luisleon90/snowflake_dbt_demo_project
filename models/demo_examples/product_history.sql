@@ -8,12 +8,12 @@ with data as ( (
     )
     union
     (
-    select
-        2 as product_key,
-        'ABC' as product_code,
-        'Red' as product_color,
-        current_date - 10 as valid_from_dt,
-        current_date + 1000000 as valid_to_dt
+        select
+            2 as product_key,
+            'ABC' as product_code,
+            'Red' as product_color,
+            current_date - 10 as valid_from_dt,
+            current_date + 1000000 as valid_to_dt
 
     )
     union
