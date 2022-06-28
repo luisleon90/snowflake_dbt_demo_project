@@ -1,11 +1,11 @@
 with data as (
     select
-    *
-    from {{ ref('product_history') }} product
-    left join {{ ref('sales') }} sales
-    on product.product_code=sales.product
-    and sales.sales_date > product.valid_from_dt
-    and sales.sales_date <= product.valid_to_dt
+        *
+    from {{ ref('product_history') }} as product
+    left join {{ ref('sales') }} as sales
+        on product.product_code = sales.product
+            and sales.sales_date > product.valid_from_dt
+            and sales.sales_date <= product.valid_to_dt
 
 )
 
