@@ -2,7 +2,8 @@ with data as ( (
     select
         'ABC' as product,
         10 as quantity,
-        20 as unit_price
+        20 as unit_price,
+        current_date - 20 as sales_date
     )
     union
     (
