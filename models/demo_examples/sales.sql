@@ -7,11 +7,11 @@ with data as ( (
     )
     union
     (
-    select
-        current_date - 11 as sales_date,
-        'ABC' as product,
-        20 as quantity,
-        18 as unit_price
+        select
+            'ABC' as product,
+            20 as quantity,
+            18 as unit_price,
+            current_date - 11 as sales_date
 
     )
     union
