@@ -1,4 +1,3 @@
-
 {% snapshot orders_snapshot %}
 
 {{
@@ -6,7 +5,6 @@
       target_database='analytics',
       target_schema='dbt_lleon',
       unique_key='o_orderkey',
-
       strategy='timestamp',
       updated_at='o_orderdate',
     )
