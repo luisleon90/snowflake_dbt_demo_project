@@ -32,6 +32,15 @@ with data as ( (
             current_date - 2 as sales_date
 
     )
+        union
+    (
+        select
+            'LMN' as product,
+            15 as quantity,
+            15 as unit_price,
+            current_date - 3 as sales_date
+
+    )
 )
 
 select * from data
