@@ -37,7 +37,8 @@ renamed as (
         lastbilleddate2,
         lastbilleddatep,
         healthcareclaimtypeid1,
-        healthcarelciamtypeid2
+        healthcarelciamtypeid2,
+        0
 
     from source
 
