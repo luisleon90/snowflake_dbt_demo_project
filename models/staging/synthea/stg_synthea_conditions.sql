@@ -12,7 +12,8 @@ renamed as (
         patient,
         encounter,
         code,
-        description
+        description,
+        0
 
     from source
 
