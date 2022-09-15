@@ -1,4 +1,10 @@
-{{ config(materialized='incremental') }}
+{{
+    config(
+        materialized='incremental',
+        unique_key= ['customer_key','name'],
+        incremental_strategy='delete+insert'
+    )
+}}
 
 with source as (
 
@@ -25,8 +31,3 @@ renamed as (
 
 select * from renamed
 
-{% if is_incremental() %}
-  -- this filter will only be applied on an incremental run
-  where customer_key not in (select customer_key from {{this}} )
-
-{% endif %}
