@@ -2,6 +2,11 @@ version: 2
 
 models:
   - name: stg_tpch_customers
+    tests: 
+    - dbt_expectations.expect_table_column_count_to_equal_other_table:
+        compare_model: analytics.dbt_lleon.stg_tpch_customers
+    - dbt_expectations.expect_table_row_count_to_equal_other_table:
+        compare_model: analytics.dbt_lleon.stg_tpch_customers
     description: staging layer for customers data
     columns:
       - name: customer_key

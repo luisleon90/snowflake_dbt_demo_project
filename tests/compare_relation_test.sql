@@ -1,16 +1,9 @@
-{# in dbt Develop #}
-
-{% set old_etl_relation=adapter.get_relation(
-      database=target.database,
-      schema="old_etl_schema",
-      identifier="fct_orders"
-) -%}
-
-{% set dbt_relation=ref('fct_orders') %}
-
-{{ audit_helper.compare_relations(
-    a_relation=old_etl_relation,
-    b_relation=dbt_relation,
-    exclude_columns=["loaded_at"],
-    primary_key="order_id"
-) }}
+{{ 
+  audit_helper.compare_all_columns(
+    a_relation=ref('stg_tpch_customers'),
+    b_relation=api.Relation.create(database='analytics', schema='test', identifier='stg_tpch_customers'), 
+    exclude_columns=['updated_at'], 
+    primary_key='id'
+  ) 
+}}
+left join {{ ref('stg_tpch_customers') }} using(id)

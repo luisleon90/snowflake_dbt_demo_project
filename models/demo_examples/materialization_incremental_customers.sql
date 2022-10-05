@@ -1,8 +1,7 @@
 {{
     config(
         materialized='incremental',
-        unique_key= ['customer_key','name'],
-        incremental_strategy='delete+insert'
+        unique_key= ['customer_key','name']
     )
 }}
 
