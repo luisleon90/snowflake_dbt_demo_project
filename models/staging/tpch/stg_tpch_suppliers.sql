@@ -14,7 +14,9 @@ renamed as (
         s_nationkey as nation_key,
         s_phone as phone_number,
         s_acctbal as account_balance,
-        s_comment as comment
+        s_comment as comment,
+        1 as new_col,
+        2 as col
 
     from source
 
