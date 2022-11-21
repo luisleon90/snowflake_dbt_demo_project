@@ -1,0 +1,31 @@
+version: 2
+
+metrics:
+  - name: revenue
+    label: Revenue
+    model: ref('fct_orders')
+    description: "Total Revenue of all ordered items"
+
+    calculation_method: sum
+    expression: GROSS_ITEM_SALES_AMOUNT - ITEM_TAX_AMOUNT - ITEM_DISCOUNT_AMOUNT
+
+    timestamp: ORDER_DATE
+    time_grains: [day, week, month, quarter, year]
+
+    dimensions:
+      - CUSTOMER_KEY
+      - PRIORITY_CODE
+
+  - name: customers
+    label: Customers
+    model: ref('fct_orders')
+    description: "Total number of customers"
+
+    calculation_method: count_distinct
+    expression: CUSTOMER_KEY
+
+    timestamp: ORDER_DATE
+    time_grains: [day, week, month, quarter, year]
+
+    dimensions:
+      - PRIORITY_CODE
