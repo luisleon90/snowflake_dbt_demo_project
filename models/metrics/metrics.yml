@@ -3,6 +3,18 @@ version: 2
 metrics:
   - name: revenue
     label: Revenue
+    model: ref('fct_order_items')
+    description: "Total Revenue of all ordered items"
+
+    calculation_method: sum
+    expression: BASE_PRICE
+
+    timestamp: ORDER_DATE
+    time_grains: [day, week, month, quarter, year]
+
+metrics:
+  - name: revenue
+    label: Revenue
     model: ref('fct_orders')
     description: "Total Revenue of all ordered items"
 
