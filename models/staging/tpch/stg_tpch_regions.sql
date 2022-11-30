@@ -11,7 +11,8 @@ renamed as (
         r_name as name,
         r_comment as comment,
         0,
-        1
+        1,
+        2
 
     from source
 
