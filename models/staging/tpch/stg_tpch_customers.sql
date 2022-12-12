@@ -24,6 +24,7 @@ renamed as (
         c_mktsegment as market_segment,
         c_comment as comment,
         2 as new_col
+        
 
     from source
 
