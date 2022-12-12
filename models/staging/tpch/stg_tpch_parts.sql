@@ -17,7 +17,7 @@ renamed as (
         p_container as container,
         p_retailprice as retail_price,
         p_comment as comment,
-        0
+        0 as new_col
 
     from source
 
