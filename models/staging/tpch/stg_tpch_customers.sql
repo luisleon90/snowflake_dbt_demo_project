@@ -1,4 +1,11 @@
+{{
+    config(
+        materialized='table'
+    )
+}}
+
 with source as (
+    
 
     select * from {{ source('tpch', 'customer') }}
 
@@ -17,6 +24,7 @@ renamed as (
         c_mktsegment as market_segment,
         c_comment as comment,
         2 as new_col
+        
 
     from source
 

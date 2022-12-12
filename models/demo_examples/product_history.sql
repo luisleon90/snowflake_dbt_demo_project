@@ -26,6 +26,15 @@ with data as ( (
             current_date + 1000000 as valid_to_dt
 
     )
+    (
+        select
+            4 as product_key,
+            'HIJ' as product_code,
+            'Blue' as product_color,
+            current_date - 60 as valid_from_dt,
+            current_date + 1000000 as valid_to_dt
+
+    )
 )
 
 select * from data
