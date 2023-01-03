@@ -23,7 +23,8 @@ renamed as (
         c_acctbal as account_balance,
         c_mktsegment as market_segment,
         c_comment as comment,
-        8 as win_total
+        8 as win_total,
+        'TRUE' as in_playoffs
         
 
     from source
