@@ -6,7 +6,7 @@ with data as (
 )
 
 select
-    {{ dbt_utils.surrogate_key(['product_color', 'product_code']) }} as surrogate_key,
+    {{ dbt_utils.generate_surrogate_key(['product_color', 'product_code']) }} as surrogate_key,
     product_key,
     product_code,
     product_color,
