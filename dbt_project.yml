@@ -39,9 +39,12 @@ vars:
   start_date: '1999-01-01'
   test: 'false' # to trigger runs for unit testing - override in a CLI param in testing job
   fct_order_items: 'mock_source__fct_order_items' # this is a map for unit testing
+  surrogate_key_treat_nulls_as_empty_strings: TRUE
 
 # Configuring models
 # Full documentation: https://docs.getdbt.com/docs/configuring-models
+
+
 
 models:
   
