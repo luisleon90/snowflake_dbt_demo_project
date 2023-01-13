@@ -26,6 +26,7 @@ with data as ( (
             current_date + 1000000 as valid_to_dt
 
     )
+    union
     (
         select
             4 as product_key,
