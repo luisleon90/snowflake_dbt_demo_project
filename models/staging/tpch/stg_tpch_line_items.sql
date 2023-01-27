@@ -28,6 +28,7 @@ renamed as (
         l_shipinstruct as ship_instructions,
         l_shipmode as ship_mode,
         l_comment as comment,
+        0 as fake_Data
 
     from source
 
