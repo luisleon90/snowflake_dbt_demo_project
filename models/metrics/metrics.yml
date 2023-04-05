@@ -29,7 +29,7 @@ metrics:
       - PRIORITY_CODE
 
   - name: customers
-    label: Customers
+    label: Customers - Luis
     model: ref('fct_orders')
     description: "Total number of customers"
 

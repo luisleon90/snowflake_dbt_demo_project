@@ -1,4 +1,4 @@
-with source as (
+ewith source as (
 
     select * from {{ source('tpch', 'supplier') }}
 
@@ -15,7 +15,6 @@ renamed as (
         s_phone as phone_number,
         s_acctbal as account_balance,
         s_comment as comment
-
     from source
 
 )
