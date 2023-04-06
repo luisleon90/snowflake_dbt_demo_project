@@ -41,3 +41,17 @@ metrics:
 
     dimensions:
       - PRIORITY_CODE
+
+  - name: people
+    label: People - New
+    model: ref('fct_orders')
+    description: "Total number of customers"
+
+    calculation_method: count_distinct
+    expression: CUSTOMER_KEY
+
+    timestamp: ORDER_DATE
+    time_grains: [day, week, month, quarter, year]
+
+    dimensions:
+      - PRIORITY_CODE
