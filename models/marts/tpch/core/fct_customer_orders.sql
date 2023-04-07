@@ -21,7 +21,8 @@ final as (
         customer.name,
         customer.region_key,
         orders.net_item_sales_amount,
-        orders.order_date
+        orders.order_date,
+        1 as new_col
 
     from
         orders
