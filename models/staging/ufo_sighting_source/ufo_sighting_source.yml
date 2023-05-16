@@ -5,7 +5,7 @@ sources:
   - name: ufo
     description: This data set comes from Kaggle and is event data describing UFO sitings geographically
     database: analytics
-    schema: dbt_lleon
+    schema: "{{env_var('DBT_SOURCE_DATA_SCHEMA')}}"
     tables:
       - name: ufo_siting_in_spain
         description: main event table
