@@ -1,0 +1,21 @@
+version: 2
+
+
+sources:
+  - name: ufo
+    description: This data set comes from Kaggle and is event data describing UFO sitings geographically
+    database: analytics
+    schema: dbt_lleon
+    tables:
+      - name: ufo_siting_in_spain
+        description: main event table
+        
+        columns:
+          - name: longitude
+            description: longitude of event location
+          - name: latitude
+            description: latitude of event location
+          - name: year
+            description: year of event
+            tests: 
+              - not_null
